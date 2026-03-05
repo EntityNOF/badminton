@@ -1,0 +1,11 @@
+# ไฟล์ที่อัปโหลดโดยผู้ใช้
+uploads/*
+!uploads/.gitkeep
+
+# XAMPP / PHP
+*.log
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
