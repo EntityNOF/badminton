@@ -88,20 +88,20 @@ $cnt_cancelled = mysqli_num_rows(mysqli_query($connect, "SELECT booking_id FROM 
                 ?>
             </td>
             <td class="bm-td">
-                <?php if ($b['slip_image']) { ?>
-                    <a href="uploads/<?php echo $b['slip_image']; ?>" target="_blank">ดูสลิป</a>
-                <?php } else { ?>
-                    -
-                <?php } ?>
+                <?= $b['slip_image'] ? "<a href='uploads/{$b['slip_image']}' target='_blank'>ดูสลิป</a>" : "-" ?>
             </td>
             <td class="bm-td">
                 <form method="post" action="bm_change_status.php" class="form-inline">
                     <input type="hidden" name="booking_id" value="<?php echo $b['booking_id']; ?>">
                     <input type="hidden" name="redirect" value="booking_management.php?status=<?php echo $status; ?>">
                     <select name="new_status">
-                        <option value="pending"   <?php if ($b['payment_status']=='pending')   echo 'selected'; ?>>รอชำระ</option>
-                        <option value="paid"      <?php if ($b['payment_status']=='paid')      echo 'selected'; ?>>ชำระแล้ว</option>
-                        <option value="cancelled" <?php if ($b['payment_status']=='cancelled') echo 'selected'; ?>>ยกเลิก</option>
+                        <?php 
+                        $statuses = ['pending' => 'รอชำระ', 'paid' => 'ชำระแล้ว', 'cancelled' => 'ยกเลิก'];
+                        foreach ($statuses as $val => $label) {
+                            $selected = ($b['payment_status'] == $val) ? 'selected' : '';
+                            echo "<option value='$val' $selected>$label</option>";
+                        }
+                        ?>
                     </select>
                     <input type="submit" value="บันทึก">
                 </form>

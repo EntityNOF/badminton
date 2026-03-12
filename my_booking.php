@@ -127,6 +127,7 @@ $result = mysqli_query($connect, "SELECT * FROM booking WHERE username='$uname' 
                     <span class="text-green">เสร็จสิ้น</span>
                 <?php } else { ?>
                     <?php if (!$row['slip_image']) { ?>
+                    <!-- multipart/form-data" เพื่อ ให้อัปโหลดรูปภาพได้ -->
                     <form method="post" action="my_booking.php" enctype="multipart/form-data" class="form-inline-block">
                         <input type="hidden" name="action"     value="upload_slip">
                         <input type="hidden" name="booking_id" value="<?php echo $row['booking_id']; ?>">

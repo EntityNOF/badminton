@@ -572,9 +572,15 @@ header a {
     border: 1px solid #ccc;
 }
 
-.um-col-id     { width: 50px; }
-.um-col-user   { width: 200px; }
-.um-col-name   { width: 200px; }
-.um-col-level  { width: 80px; }
+.um-col-id { width: 50px; }
+.um-col-user { width: 200px; }
+.um-col-name { width: 200px; }
+.um-col-level { width: 80px; }
 .um-col-action { width: 160px; }
 
+
+
+/* Court management */
+.admin-container {
+    text-align: center;
+}

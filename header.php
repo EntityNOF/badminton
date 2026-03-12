@@ -38,6 +38,7 @@ if (isset($_SESSION['username'])) {
     echo '</header>';
     echo '</html>';
 }else {
+    echo '<li><a href="court_booking.php">จองสนาม</a></li>';
     echo '<li><a href="login.php">Login/Register</a></li>';
     echo '</ul>';
     echo '</header>';

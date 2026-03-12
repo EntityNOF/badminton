@@ -68,18 +68,20 @@ $time_slots = ['08:00-09:00','09:00-10:00','10:00-11:00','11:00-12:00',
                 $is_booked = isset($booked[$c][$slot]);
             ?>
             <td class="booking-table-cell">
-                <?php if ($is_booked) { ?>
-                    <button disabled class="btn-booked">จองแล้ว</button>
-                <?php } elseif (isset($_SESSION['username'])) { ?>
-                    <form method="post" action="court_booking_submit.php" class="form-inline">
-                        <input type="hidden" name="time_slot"    value="<?php echo $slot; ?>">
-                        <input type="hidden" name="book_date"    value="<?php echo $selected_date; ?>">
-                        <input type="hidden" name="court_number" value="<?php echo $c; ?>">
-                        <button type="submit" class="btn-book">จอง</button>
-                    </form>
-                <?php } else { ?>
-                    <button disabled class="btn-available">ว่าง</button>
-                <?php } ?>
+                <?php 
+                if ($is_booked) { 
+                    echo '<button disabled class="btn-booked">จองแล้ว</button>';
+                } elseif (isset($_SESSION['username'])) { 
+                    echo "<form method='post' action='court_booking_submit.php' class='form-inline'>
+                            <input type='hidden' name='time_slot' value='{$slot}'>
+                            <input type='hidden' name='book_date' value='{$selected_date}'>
+                            <input type='hidden' name='court_number' value='{$c}'>
+                            <button type='submit' class='btn-book'>จอง</button>
+                          </form>";
+                } else { 
+                    echo '<button disabled class="btn-available">ว่าง</button>';
+                } 
+                ?>
             </td>
             <?php } ?>
         </tr>

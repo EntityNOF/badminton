@@ -45,11 +45,7 @@
     <div class="cta-section">
         <h2>พร้อมที่จะเล่นแบดมินตันแล้วหรือ?</h2>
         <p>ไปดูสนามของเรา และจองสนามโปรดของคุณเลย!</p>
-        <?php if (isset($_SESSION['username'])) { ?>
-            <a href="court_booking.php" class="btn-primary">ไปจองสนาม</a>
-        <?php } else { ?>
-            <a href="login.php" class="btn-primary">เข้าสู่ระบบเพื่อจอง</a>
-        <?php } ?>
+        <?= isset($_SESSION['username']) ? '<a href="court_booking.php" class="btn-primary">ไปจองสนาม</a>' : '<a href="login.php" class="btn-primary">เข้าสู่ระบบเพื่อจอง</a>' ?>
     </div>
 
 <?php require_once "footer.php"; ?>

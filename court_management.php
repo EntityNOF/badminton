@@ -46,11 +46,7 @@ $result = mysqli_query($connect, "SELECT * FROM court ORDER BY court_number ASC"
             <td><?php echo $row['court_name']; ?></td>
             <td><?php echo number_format($row['price_per_hour'], 2); ?></td>
             <td>
-                <?php if ($row['is_active'] == 1) { ?>
-                    <span class="text-green">เปิดใช้งาน</span>
-                <?php } else { ?>
-                    <span class="text-gray">ปิดปรับปรุง</span>
-                <?php } ?>
+                <?= $row['is_active'] == 1 ? '<span class="text-green">เปิดใช้งาน</span>' : '<span class="text-gray">ปิดปรับปรุง</span>' ?>
             </td>
             <td class="um-col-action">
                 <a href="court_edit.php?court_id=<?php echo $row['court_id']; ?>" class="btn-edit">EDIT</a>

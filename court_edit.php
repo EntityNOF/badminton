@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     }
 
-    // ตรวจสอบหมายเลขสนามซ้ำ (ยกเว้นตัวเอง)
+    // ตรวจสอบหมายเลขสนามซ้ำ
     $check = mysqli_query($connect, "SELECT court_id FROM court WHERE court_number = $court_number AND court_id <> $court_id");
     if (mysqli_num_rows($check) > 0) {
         $_SESSION['errors_msg'] = "หมายเลขสนามนี้มีอยู่ในระบบแล้ว";
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit;
 }
 
-// แสดง flash message
+// แสดง error message
 if (isset($_SESSION['errors_msg'])) {
     echo "<p class='msg-error'>" . $_SESSION['errors_msg'] . "</p>";
     unset($_SESSION['errors_msg']);

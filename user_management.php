@@ -38,8 +38,7 @@ $listResult = mysqli_query($connect, $listQuery);
                     <td class="um-col-action">
                         <a href="um_edit.php?user_id=<?php echo $row['user_id']; ?>" class="btn-edit">EDIT</a>
                         <?php if ($row['username'] !== $_SESSION['username']) { ?>
-                            | <form method="post" action="um_delete.php" class="form-inline-block"
-                                  onsubmit="return confirm('ยืนยันการลบผู้ใช้นี้?')">
+                            | <form method="post" action="um_delete.php" class="form-inline-block">
                                 <input type="hidden" name="user_id" value="<?php echo $row['user_id']; ?>">
                                 <button type="submit" class="btn-delete">DELETE</button>
                               </form>

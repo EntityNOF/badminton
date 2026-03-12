@@ -94,8 +94,8 @@ VALUES ('admin', 'admin', 3, 1);
 -- ==============================
 INSERT INTO employee (firstname, lastname) VALUES ('สมชาย', 'ใจดี');
 INSERT INTO systemuser (username, password, level, employee_id)
-VALUES ('user1', '1234', 2, 2);
+VALUES ('user1', '1111', 2, 2);
 
 INSERT INTO employee (firstname, lastname) VALUES ('สมหญิง', 'รักดี');
 INSERT INTO systemuser (username, password, level, employee_id)
-VALUES ('user2', '1234', 2, 3);
+VALUES ('user2', '2222', 2, 3);
