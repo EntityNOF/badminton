@@ -223,27 +223,32 @@ header a {
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
+    text-align: center;
 }
 
 .features-section h2 {
-    text-align: center;
     font-size: 1.5rem;
     margin-bottom: 30px;
     color: #333;
 }
 
 .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    /* เปลี่ยนจาก Grid ล้ำๆ มาใช้แบบเบื้องต้น */
+    display: block; 
     margin-bottom: 40px;
 }
 
 .feature-card {
+    /* ใช้ inline-block เพื่อให้มันเรียงต่อกันในแนวนอน */
+    display: inline-block;
+    width: 22%;
+    min-width: 200px; /* ถ้าจอมือถือเล็กๆ จะได้ไม่หดจนเละ */
+    margin: 1%; /* ระยะห่างระหว่างกล่อง 1% ทั้งซ้ายขวา */
     background: #f9f9f9;
     border: 1px solid #ddd;
     padding: 20px;
-    text-align: center;
+    box-sizing: border-box; /* สำคัญ: ให้ padding รวมอยู่ใน width */
+    vertical-align: top; /* จัดให้กล่องที่ความสูงไม่เท่ากัน อยู่ด้านบนเสมอ */
 }
 
 .feature-icon {
@@ -539,7 +544,7 @@ header a {
     border: 1px solid #ccc;
 }
 
-/* ===== My Booking - table ===== */
+/* My Booking - table */
 .my-booking-wrap h2 {
     text-align: center;
 }
@@ -560,13 +565,13 @@ header a {
     border: 1px solid #ccc;
 }
 
-/* ===== Court Booking - table ===== */
+/*  Court Booking - table */
 .booking-table th,
 .booking-table td {
     border: 1px solid #ccc;
 }
 
-/* ===== Admin - User Management table ===== */
+/* Admin - User Management table */
 .admin-container table th,
 .admin-container table td {
     border: 1px solid #ccc;

@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="style.css">
     <body>
         <header>
-        <a href="index.php"><img src="images/cake-shop-icon-vector.jpg" alt="logo" class="logo"></a>
+        <a href="index.php"><img src="images/icon.jpg" alt="logo" class="logo"></a>
         <ul class="bar">
             <li><a href="index.php">หน้าแรก</a></li>
 

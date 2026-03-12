@@ -67,13 +67,6 @@ CREATE TABLE IF NOT EXISTS booking (
 );
 
 -- ==============================
--- Index เพิ่มประสิทธิภาพการค้นหา
--- ==============================
-CREATE INDEX idx_booking_date   ON booking (booking_date);
-CREATE INDEX idx_booking_user   ON booking (username);
-CREATE INDEX idx_booking_status ON booking (payment_status);
-
--- ==============================
 -- ข้อมูลสนาม (court)
 -- ==============================
 INSERT INTO court (court_number, court_name, price_per_hour, is_active) VALUES
