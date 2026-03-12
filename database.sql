@@ -3,13 +3,13 @@
 -- ==============================
 
 -- สร้างฐานข้อมูล
-CREATE DATABASE IF NOT EXISTS badminton_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE badminton_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE badminton_db;
 
 -- ==============================
 -- ตาราง employee (เก็บข้อมูลชื่อ-นามสกุลของผู้ใช้)
 -- ==============================
-CREATE TABLE IF NOT EXISTS employee (
+CREATE TABLE employee (
     employee_id INT          AUTO_INCREMENT PRIMARY KEY,
     firstname   VARCHAR(100) NOT NULL,
     lastname    VARCHAR(100) NOT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS employee (
 -- ตาราง systemuser (เก็บบัญชีผู้ใช้ระบบ)
 -- level: 2 = ผู้ใช้ทั่วไป, 3 = ผู้ดูแลระบบ
 -- ==============================
-CREATE TABLE IF NOT EXISTS systemuser (
+CREATE TABLE systemuser (
     user_id     INT          AUTO_INCREMENT PRIMARY KEY,
     username    VARCHAR(100) NOT NULL UNIQUE,
     password    VARCHAR(255) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS systemuser (
 -- ตาราง court (เก็บข้อมูลสนามแบดมินตัน)
 -- is_active: 1 = เปิดใช้งาน, 0 = ปิดปรับปรุง
 -- ==============================
-CREATE TABLE IF NOT EXISTS court (
+CREATE TABLE court (
     court_id       INT          AUTO_INCREMENT PRIMARY KEY,
     court_number   INT          NOT NULL UNIQUE,
     court_name     VARCHAR(100) NOT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS court (
 -- ตาราง booking (เก็บข้อมูลการจองสนาม)
 -- payment_status: pending = รอชำระ, paid = ชำระแล้ว, cancelled = ยกเลิก
 -- ==============================
-CREATE TABLE IF NOT EXISTS booking (
+CREATE TABLE booking (
     booking_id     INT          AUTO_INCREMENT PRIMARY KEY,
     username       VARCHAR(100) NOT NULL,
     booking_date   DATE         NOT NULL,
